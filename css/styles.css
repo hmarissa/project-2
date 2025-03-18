@@ -23,6 +23,8 @@ p{
     font-style: normal;
     color: #416B64;
     font-size: 4rem;
+    line-height: 1;
+    text-align: center;
 }
 #sleep{
     background-image:url(../img/sleeping.jpg);
@@ -46,7 +48,7 @@ background-position:center;
     height: 100%;
 }
 .surprised-text{
-   
+  
 }
 section{
    border-bottom: 10px solid #416B64;
