@@ -3,11 +3,40 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="img/Star 1.svg">
-        <title>Scroll Charette</title>
+        <title>Project 2</title>
         <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.typekit.net/vkp3rzp.css">
+        <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
+        <style>
+               html, body, section {
+        block-size: 100%;
+        }
+
+        html {
+        scroll-snap-type: y mandatory;
+        }
+
+        section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        img{
+            width: 100%;
+        }
+        </style>
     </head>
     <body>
-
+        <section>
+            <p>[insert title here]</p>
+        </section>
+        <section>
+            <img src="img/sleeping.svg" alt="bee-sleeping-on-flower">
+        </section>
+        <section>
+            <img src="img/burst.svg" alt="sunburst">
+        </section>
     </body>
 </html>
