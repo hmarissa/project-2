@@ -29,8 +29,8 @@ p{
 #sleep{
     background-image:url(../img/sleeping.jpg);
     background-repeat:no-repeat;
-background-size:contain;
-background-position:center;
+    background-size:contain;
+    background-position:center;
 }
 #burst{
     background-image: url(../img/burst.svg);
@@ -49,6 +49,12 @@ background-position:center;
 }
 .surprised-text{
   
+}
+#late{
+    background-image: url(../img/halftone3\ copy.png);
+    background-repeat:no-repeat;
+    background-size:auto 100%;
+    background-position:center;
 }
 section{
    border-bottom: 10px solid #416B64;
