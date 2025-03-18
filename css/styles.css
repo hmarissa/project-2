@@ -1,6 +1,7 @@
 html{
     background-color: #F2F7EA;
-    
+    width: 100%;
+    margin: auto; 
 }
 h1{
     font-family: "kestrel-script", sans-serif;
@@ -11,4 +12,28 @@ p{
     font-family: "fields", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+#sleep{
+    background-image:url(../img/sleeping.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#burst{
+    background-image: url(../img/burst.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#surprised{
+    background-image: url(../img/surprisedbg.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#surprised img{
+    
+}
+section{
+   border-bottom: 10px solid #416B64;
 }
