@@ -7,17 +7,28 @@ h1{
     font-family: "kestrel-script", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #416B64;
+    font-size: 20rem;
+}
+h2{
+    font-family: "kestrel-script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #416B64;
+    font-size: 13rem;
 }
 p{
     font-family: "fields", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #416B64;
+    font-size: 4rem;
 }
 #sleep{
     background-image:url(../img/sleeping.jpg);
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
 }
 #burst{
     background-image: url(../img/burst.svg);
@@ -32,7 +43,10 @@ p{
     background-position: center;
 }
 #surprised img{
-    
+    height: 100%;
+}
+.surprised-text{
+   
 }
 section{
    border-bottom: 10px solid #416B64;
