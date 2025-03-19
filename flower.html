@@ -8,36 +8,57 @@
         <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
         <style>
             html{
-                height: 200vh;
+                height: 320vh;
                 background-image: url(./img/flower-bg.png);
                 background-repeat:no-repeat;
                 background-size:cover;
                 background-position:top;
                 background-attachment: fixed;
             }
-            #flying-bee img{
-                position: relative;
+            #flying-bee {
+                position: fixed;
+                top:10%;
                 left: 2rem;
-                width: 25%;
-                height: auto;
                 transition: transform 0.1s ease-out;
             }
-            a img{
-                position:sticky;
-                
-            }   
+            #flying-bee img{
+                width: 30%;
+                height: auto;
+            }
+            #arrow{
+                position:fixed;
+                right:2rem;
+                bottom:2rem;
+                display:none;
+            } 
+            p{
+                position: fixed;
+                left: 25%;
+            }  
         </style>
     </head>
     <body>
-        <p>first, find the sweetest flower...</p>
+        <p>first, find the<br>sweetest flower...</p>
         <div id="flying-bee">
             <img src="img/flying.gif" alt="flying-bee">
         </div>
-        <a href="flower.html"><img src="img/arrow.svg" alt="next-page"></a>
+        <a id="arrow" href="nectar.html"><img src="img/arrow.svg" alt="next-page"></a>
         <script>
             window.addEventListener("scroll", function () {
          let scrollTop = window.scrollY || document.documentElement.scrollTop;
-         let moveDistance = Math.min(1500, scrollTop * 1.5); // Adjust the multiplier for speed
+         let docHeight = document.documentElement.scrollHeight;
+        let windowHeight = window.innerHeight;
+
+                // Calculate the distance from the bottom of the page
+                if (scrollTop + windowHeight >= docHeight) {
+                    // If the user has reached the bottom of the page, show the image
+                    document.getElementById("arrow").style.display = "block";
+                } else {
+                    // Otherwise, keep it hidden
+                    document.getElementById("arrow").style.display = "none";
+                }
+
+         let moveDistance = Math.min(1500, scrollTop * 0.5); // Adjust the multiplier for speed
  
          document.getElementById("flying-bee").style.transform = `translateX(${moveDistance}px)`;
      });

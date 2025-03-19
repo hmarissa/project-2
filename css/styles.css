@@ -65,5 +65,9 @@ section{
    border-bottom: 10px solid #416B64;
 }
 a img{
-    width:15rem;
+   width:15rem;
+    transition: transform 0.01s ease;
+}
+a img:hover{
+    transform: rotate(-7deg);
 }
