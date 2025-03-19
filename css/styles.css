@@ -64,3 +64,6 @@ p{
 section{
    border-bottom: 10px solid #416B64;
 }
+a img{
+    width:15rem;
+}

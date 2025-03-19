@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/Star 1.svg">
+        <title>Project 2</title>
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
+        <style>
+            html{
+                height: 200vh;
+                background-image: url(./img/flower-bg.png);
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-position:top;
+                background-attachment: fixed;
+            }
+            #flying-bee img{
+                position: relative;
+                left: 2rem;
+                width: 25%;
+                height: auto;
+                transition: transform 0.1s ease-out;
+            }
+            a img{
+                position:sticky;
+                
+            }   
+        </style>
+    </head>
+    <body>
+        <p>first, find the sweetest flower...</p>
+        <div id="flying-bee">
+            <img src="img/flying.gif" alt="flying-bee">
+        </div>
+        <a href="flower.html"><img src="img/arrow.svg" alt="next-page"></a>
+        <script>
+            window.addEventListener("scroll", function () {
+         let scrollTop = window.scrollY || document.documentElement.scrollTop;
+         let moveDistance = Math.min(1500, scrollTop * 1.5); // Adjust the multiplier for speed
+ 
+         document.getElementById("flying-bee").style.transform = `translateX(${moveDistance}px)`;
+     });
+         </script>
+    </body>
+</html>
