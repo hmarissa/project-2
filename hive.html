@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" type="image/x-icon" href="img/Star 1.svg">
@@ -9,15 +9,61 @@
         <style>
             html{
                 height: 200vh;
-                background-image: url(./img/nectar-bg.png);
+                background-image: url(./img/hivebg.png);
                 background-repeat:no-repeat;
                 background-size:cover;
                 background-position:top;
                 background-attachment: fixed;
             }
+            #flying-bee {
+                position: fixed;
+                top:10%;
+                right: -40%;
+                transition: transform 0.1s ease-out;
+            }
+            #flying-bee img{
+                width: 30%;
+                height: auto;
+                transform: scaleX(-1);
+            }
+            #arrow{
+                position:fixed;
+                right:2rem;
+                bottom:2rem;
+                display:none;
+            } 
+            p{
+                position: fixed;
+                left: 25%;
+            } 
         </style>
     </head>
     <body>
-    <p>then, collect its nectar!</p>
+        <p>now, take it back to the hive!</p>
+        <div id="flying-bee">
+            <img src="img/flying.gif" alt="flying-bee">
+        </div>
+        <a id="arrow" href="honey.html"><img src="img/arrow.svg" alt="next-page"></a>
+        <script>
+            window.addEventListener("scroll", function () {
+         let scrollTop = window.scrollY || document.documentElement.scrollTop;
+         let docHeight = document.documentElement.scrollHeight;
+        let windowHeight = window.innerHeight;
+
+                // Calculate the distance from the bottom of the page
+                if (scrollTop + windowHeight >= docHeight) {
+                    // If the user has reached the bottom of the page, show the image
+                    document.getElementById("arrow").style.display = "block";
+                } else {
+                    // Otherwise, keep it hidden
+                    document.getElementById("arrow").style.display = "none";
+                }
+
+         let moveDistance = Math.min(1500, scrollTop * 0.5); // Adjust the multiplier for speed
+         
+ 
+         document.getElementById("flying-bee").style.transform = `translateX(-${moveDistance}px)`;
+     });
+         </script>
     </body>
 </html>

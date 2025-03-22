@@ -54,11 +54,16 @@
             right: -50%;
             transform: translate(100%, 0%);
         }
+        #arrow{
+                position:fixed;
+                right:2rem;
+                bottom:2rem;
+                display:none;
+            } 
     </style>
 </head>
 <body>
-    <p>Then, collect its nectar!</p>
-    
+    <p>then, collect its nectar...</p>
     <div class="hands-container">
         <div id="lefthand">
             <img src="img/hand.png" alt="hand">
@@ -67,11 +72,23 @@
             <img src="img/hand.png" alt="hand">
         </div>
     </div>
-
+    <a id="arrow" href="hive.html"><img src="img/arrow.svg" alt="next-page"></a>
     <script>
         window.addEventListener("scroll", function() {
             let scrollPosition = window.scrollY;
-            let triggerPoint = window.innerHeight * 0.1; // Adjust trigger point
+            let triggerPoint = window.innerHeight * 0.05; // Adjust trigger point
+         let scrollTop = window.scrollY || document.documentElement.scrollTop;
+         let docHeight = document.documentElement.scrollHeight;
+        let windowHeight = window.innerHeight;
+
+                // Calculate the distance from the bottom of the page
+                if (scrollTop + windowHeight >= docHeight) {
+                    // If the user has reached the bottom of the page, show the image
+                    document.getElementById("arrow").style.display = "block";
+                } else {
+                    // Otherwise, keep it hidden
+                    document.getElementById("arrow").style.display = "none";
+                }
 
             if (scrollPosition > triggerPoint) {
                 document.getElementById("lefthand").style.transform = "translate(50%, 0%)";
