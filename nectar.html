@@ -1,23 +1,86 @@
 <!DOCTYPE html>
-<html>
-    <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="icon" type="image/x-icon" href="img/Star 1.svg">
-            <title>Project 2</title>
-            <link href="css/styles.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
-        <style>
-            html{
-                height: 200vh;
-                background-image: url(./img/nectar-bg.png);
-                background-repeat:no-repeat;
-                background-size:cover;
-                background-position:top;
-                background-attachment: fixed;
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
+    <style>
+        html {
+            height: 120vh;
+            background-image: url(./img/nectar-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            background-attachment: fixed;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            text-align: center;
+            overflow-x: hidden;
+        }
+        p {
+            position: fixed;
+            
+        }
+        /* Parent container */
+        .hands-container {
+            position: relative;
+            width: 100%;
+            height: 120vh; /* Ensures visibility */
+        }
+        /* Hands */
+        #righthand, #lefthand {
+            position: absolute;
+          bottom: 0%;
+            /* transform: translateY(-50%); */
+            transition: transform 0.9s ease-out;
+        }
+        #righthand img, #lefthand img {
+            width: 40%;
+        }
+        #lefthand img {
+            transform: scaleX(-1);
+        }
+        /* Initial Off-screen Position */
+        #lefthand {
+            left: -50%;
+            transform: translate(-100%, 0%);
+        }
+        #righthand {
+            right: -50%;
+            transform: translate(100%, 0%);
+        }
+    </style>
+</head>
+<body>
+    <p>Then, collect its nectar!</p>
+    
+    <div class="hands-container">
+        <div id="lefthand">
+            <img src="img/hand.png" alt="hand">
+        </div>
+        <div id="righthand">
+            <img src="img/hand.png" alt="hand">
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let scrollPosition = window.scrollY;
+            let triggerPoint = window.innerHeight * 0.1; // Adjust trigger point
+
+            if (scrollPosition > triggerPoint) {
+                document.getElementById("lefthand").style.transform = "translate(50%, 0%)";
+                document.getElementById("righthand").style.transform = "translate(-50%, 0%)";
+            } else {
+                document.getElementById("lefthand").style.transform = "translate(-100%, 0%)";
+                document.getElementById("righthand").style.transform = "translate(100%, 0%)";
             }
-        </style>
-    </head>
-    <body>
-    <p>then, collect its nectar!</p>
-    </body>
+        });
+    </script>
+</body>
 </html>
