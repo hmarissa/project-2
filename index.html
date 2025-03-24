@@ -26,11 +26,17 @@
         a img{
             margin-top: 3rem;
         }
+        #title{
+            background-image: url(./img/halftone3\ copy.png);
+            background-repeat:no-repeat;
+    background-size:auto 100%;
+    background-position:center;
+        }
         </style>
     </head>
     <body>
-        <section>
-            <p>[insert title here]</p>
+        <section id="title">
+            <h2>Bee-atriz the<br>Buzz-y Bee</h2>
         </section>
         <section id="sleep">
         </section>
@@ -51,5 +57,10 @@
             <a href="flower.html"><img src="img/arrow.svg" alt="next-page" ></a>
         </div>
         </section>
+        <script>
+            window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+        </script>
     </body>
 </html>

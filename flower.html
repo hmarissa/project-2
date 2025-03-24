@@ -35,15 +35,30 @@
                 position: fixed;
                 left: 25%;
             }  
+            #back-arrow{
+                position:fixed;
+                left:2rem;
+                top:2rem;
+            }
+            #back-arrow img{
+                width:9rem;
+                transform: scaleX(-1);
+            }
         </style>
     </head>
     <body>
+        <a id="back-arrow" href="index.html"><img src="img/arrow.svg" alt="last-page"></a>
         <p>first, find the<br>sweetest flower...</p>
         <div id="flying-bee">
             <img src="img/flying.gif" alt="flying-bee">
         </div>
         <a id="arrow" href="nectar.html"><img src="img/arrow.svg" alt="next-page"></a>
+        <audio id="buzz-sound" src="audio/bee-flying-loop-42287.mp3" loop></audio>
         <script>
+        const buzzSound = document.getElementById("buzz-sound");
+        let isPlaying = false;
+        let lastScrollY = 0;
+
             window.addEventListener("scroll", function () {
          let scrollTop = window.scrollY || document.documentElement.scrollTop;
          let docHeight = document.documentElement.scrollHeight;
@@ -61,6 +76,25 @@
          let moveDistance = Math.min(1500, scrollTop * 0.5); // Adjust the multiplier for speed
  
          document.getElementById("flying-bee").style.transform = `translateX(${moveDistance}px)`;
+
+         if (!isPlaying) {
+                buzzSound.play();
+                isPlaying = true;
+            }
+
+            // Adjust volume based on scroll speed
+            let scrollSpeed = Math.abs(scrollTop - lastScrollY);
+            let volume = Math.min(1, scrollSpeed / 100); // Scale volume (0 to 1)
+            buzzSound.volume = volume;
+
+            lastScrollY = scrollTop;
+
+            // Stop sound after user stops scrolling
+            clearTimeout(window.beeSoundTimeout);
+            window.beeSoundTimeout = setTimeout(() => {
+                buzzSound.pause();
+                isPlaying = false;
+            }, 300);
      });
          </script>
     </body>

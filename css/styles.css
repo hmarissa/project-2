@@ -45,12 +45,14 @@ p{
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
+    align-items: end;
 }
 #surprised img{
     height: 100%;
 }
 .surprised-text{
-  
+  position: relative;
+  right: 6rem;
 }
 #late{
     background-image: url(../img/halftone3\ copy.png);

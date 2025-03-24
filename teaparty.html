@@ -26,15 +26,35 @@
         #party{
             background-image: url(./img/teapartybg.png);
         }
+        #party h2{
+            position: relative;
+            top:25%;
+            left:30%;
+        }
+        section div{
+            text-align: center;
+        }
+        #back-arrow{
+                position:fixed;
+                left:2rem;
+                top:2rem;
+            }
+            #back-arrow img{
+                width:9rem;
+                transform: scaleX(-1);
+            }
         </style>
     </head>
     <body>
         <section>
-            <h2>Un-bee-lievable!</h2>
+            <div>
+                <a id="back-arrow" href="honey.html"><img src="img/arrow.svg" alt="last-page"></a>
+               <h2>Un-bee-lievable!</h2>
             <p>just in time for the tea party!</p>
+            </div>
         </section>
         <section id="party">
-            <h2>The End!</h2>
+            <h2>The<br>End!</h2>
         </section>
     </body>
 </html>

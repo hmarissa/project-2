@@ -24,16 +24,9 @@
         align-items: center;
         justify-content: center;
         }
-            h2{
-                posi
-            }
             
-            #arrow{
-                position:fixed;
-                right:2rem;
-                bottom:2rem;
-                display:none;
-            }
+            
+            
             #honeycomb-1{
                 background-image: url(./img/honeycomb1.png);
                 background-size: auto 100%;
@@ -63,35 +56,39 @@
                 background-size: auto 100%;
                 background-repeat: no-repeat;
                 background-position: center;
+                align-items: start;
+            }
+            #honey div{
+                text-align: center;
+                margin-top: 10%;
+            }
+            h2{
+                margin-bottom:60% ;
+            }
+            #back-arrow{
+                position:fixed;
+                left:2rem;
+                top:2rem;
+            }
+            #back-arrow img{
+                width:9rem;
+                transform: scaleX(-1);
             }
             </style>
     </head>
     <body>
         <section id="honeycomb-1">
+            <a id="back-arrow" href="hive.html"><img src="img/arrow.svg" alt="last-page"></a>
             <p>so you and all<br>the other bees can<br>turn it into...</p>
         </section>
         <section id="honeycomb-2"></section>
         <section id="honeycomb-3"></section>
         <section id="honeycomb-4"></section>
        <section id="honey">
-        <h2>Honey!</h2>
-        <a id="arrow" href="teaparty.html"><img src="img/arrow.svg" alt="next-page"></a>
+        <div>
+            <h2>Honey!</h2>
+        <a id="arrow" href="teaparty.html"><img src="img/arrow.svg" alt="next-page"></a> 
+        </div>
        </section>
-        <script>
-            window.addEventListener("scroll", function () {
-            let scrollTop = window.scrollY || document.documentElement.scrollTop;
-         let docHeight = document.documentElement.scrollHeight;
-        let windowHeight = window.innerHeight;
-
-                // Calculate the distance from the bottom of the page
-                if (scrollTop + windowHeight >= docHeight) {
-                    // If the user has reached the bottom of the page, show the image
-                    document.getElementById("arrow").style.display = "block";
-                } else {
-                    // Otherwise, keep it hidden
-                    document.getElementById("arrow").style.display = "none";
-                }
-            });
-        </script>
     </body>
 </html>
