@@ -7,20 +7,91 @@
             <link href="css/styles.css" rel="stylesheet">
             <link rel="stylesheet" href="https://use.typekit.net/aod4qkp.css">
             <style>
-                html{
-                height: 470vh;
-                background-image: url(./img/honeycomb.png);
-                
-            }
+            
+            html, body, section {
+        block-size: 100%;
+        }
+
+        html {
+        scroll-snap-type: y mandatory;
+        }
+
+        section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
             h2{
+                posi
+            }
+            
+            #arrow{
                 position:fixed;
-                bottom:0 ;
-                left: 30%;
+                right:2rem;
+                bottom:2rem;
+                display:none;
+            }
+            #honeycomb-1{
+                background-image: url(./img/honeycomb1.png);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #honeycomb-2{
+                background-image: url(./img/honeycomb2.png);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #honeycomb-3{
+                background-image: url(./img/honeycomb3.png);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #honeycomb-4{
+                background-image: url(./img/honeycomb4.png);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #honey{
+                background-image: url(./img/honey.png);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
             }
             </style>
     </head>
     <body>
-        <p>now you and all the other bees can turn it into...</p>
+        <section id="honeycomb-1">
+            <p>so you and all<br>the other bees can<br>turn it into...</p>
+        </section>
+        <section id="honeycomb-2"></section>
+        <section id="honeycomb-3"></section>
+        <section id="honeycomb-4"></section>
+       <section id="honey">
         <h2>Honey!</h2>
+        <a id="arrow" href="teaparty.html"><img src="img/arrow.svg" alt="next-page"></a>
+       </section>
+        <script>
+            window.addEventListener("scroll", function () {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+         let docHeight = document.documentElement.scrollHeight;
+        let windowHeight = window.innerHeight;
+
+                // Calculate the distance from the bottom of the page
+                if (scrollTop + windowHeight >= docHeight) {
+                    // If the user has reached the bottom of the page, show the image
+                    document.getElementById("arrow").style.display = "block";
+                } else {
+                    // Otherwise, keep it hidden
+                    document.getElementById("arrow").style.display = "none";
+                }
+            });
+        </script>
     </body>
 </html>
