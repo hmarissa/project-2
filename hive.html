@@ -59,6 +59,10 @@
             const buzzSound = document.getElementById("buzz-sound");
         let isPlaying = false;
         let lastScrollY = 0;
+        document.addEventListener("click", () => {
+    buzzSound.play();
+}, { once: true }); // Ensures it only runs once
+
 
             window.addEventListener("scroll", function () {
          let scrollTop = window.scrollY || document.documentElement.scrollTop;
